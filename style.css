@@ -49,41 +49,121 @@ body {
 	margin: 10px;
 	background-color: #f2f2f2;
 }
-.wrapper {
-	margin: 0 auto;
-	padding: 20px;
-	width: 800px;
-	min-height: 400px;
+nav {
+	margin: 0;
+	padding: 0;
+	background-color: #254441;
+}
+nav:after {
+	content: "";
+	display: table;;
+	clear: both;
+}
+ul {
+	list-style: none;
+}
+nav ul li {
+  margin: 0px;
+  background-color: #254441;
+}
+nav a:hover {
+	background-color: #000000;
+}
+li > a.haspopup:after {
+	content: ' +';
+}
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #efefef;
 	text-align: center;
 }
-#target {			
-	background-color: #ffffff;
-	border: 2px solid #e2e2e2;
-	width: 400px;
-	margin: 20px auto;
-	color: #888;
-	padding: 40px 0;
-	font-size: 24px;
+main {
+	padding: 20px 0;
 }
-#info {
-	width: 400px;
-	margin: 20px auto;
-	padding: 40px 0;
-	display: none;
-	text-align: left;
+.right {
+	right: 0;
 }
-#info ul {
-	list-style: none;
-	margin: 20px 0;
-	padding: 20px 10px;
-	border: 1px solid #e2e2e2;
+@media (min-width: 20em) and (max-width: 48em) {
+	nav ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	nav a {
+		display: block;
+		padding: 0 20px;
+		color: #FFF;
+		font-size: 14px;
+		line-height: 40px;
+		text-decoration: none;
+	}
+
+	nav ul ul {
+		display: none;
+		position: static;
+		padding: 0 15px;
+	}
+
+	nav ul li:hover > ul {
+		display: inherit;
+	}
+
+	nav ul ul li,
+	nav ul ul ul li {
+		width: 170px;
+		float: none;
+		display: list-item;
+		position: relative;
+	}
 }
-#info ul li {
-	padding-bottom: 8px;
-}
-#info ul li span.name {
-	padding: 0 5px;
-}
-canvas {
-	background-color: #fff;
+@media (min-width: 48em) {
+	nav ul {
+		float: right;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		position: relative;
+	}
+
+	nav ul li {
+		display: inline-block;
+		float: left;
+	}
+
+	nav a {
+		display: block;
+		padding: 0 20px;
+		color: #FFF;
+		font-size: 20px;
+		line-height: 50px;
+		text-decoration: none;
+	}
+
+	nav ul ul {
+		display: none;
+		position: absolute;
+		top: 50px;
+	}
+
+	nav ul li:hover > ul {
+		display: inherit;
+	}
+
+	nav ul ul li {
+		width: 170px;
+		float: none;
+		display: list-item;
+		position: relative;
+	}
+
+	nav ul ul ul li {
+		position: relative;
+		top: -60px;
+		left: 170px;
+	}
 }
